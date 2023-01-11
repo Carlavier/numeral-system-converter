@@ -30,7 +30,7 @@ const deConvDigits = {
 }
 const convDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
-function convCheck(input, from) {
+function convCheckDigits(input, from) {
     // console.log(from);
     for (const i of input) {
         // console.log(i, deConvDigits[i]);
@@ -42,7 +42,7 @@ function convCheck(input, from) {
 
 function convCheckWTH(str, signed) {
     if (signed == '-') {
-        console.log(signed);
+        // console.log(signed);
         if (!str.length) return true;
         let ok = true;
         for(const i of str) if (i != '0') ok = false;
@@ -66,11 +66,11 @@ function convTo10(str, from) {
             base /= from
         }
     }
-    console.log(res);
+    // console.log(res);
     return res;
 }
 
-function conv(num, to) {
+function conv(num, signed, to) {
     let int = Math.floor(num), fl = num - int, res = '';
     while(int) {
         res = convDigits[int % to].toString() + res;
@@ -88,14 +88,14 @@ function conv(num, to) {
         // console.log(res);
     }
     if (res[res.length - 1] == '.') res = res.substring(0, res.length - 1);
-    return 'Result: ' + res;
+    return 'Result: ' + signed + res;
 }
 
 function convHandle(str, signed, from, to) {
     if (convCheckWTH(str, signed)) return 'Errorrrrrr: WTH have you done!!! :('
     if (!str.length) return 'Error: You did it well :)';
-    if (!convCheck(str, from)) return 'Error: Number digit(s) unexpected';
-    return conv(convTo10(str, from), to);
+    if (!convCheckDigits(str, from)) return 'Error: Number digit(s) unexpected';
+    return conv(convTo10(str, from), signed, to);
 }
 
 escButton.addEventListener('click', (event) => {
