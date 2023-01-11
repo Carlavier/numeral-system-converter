@@ -34,7 +34,8 @@ function convCheck(input, from) {
     // console.log(from);
     for (const i of input) {
         // console.log(i, deConvDigits[i]);
-        if ((deConvDigits[i] > from) || !(i in convDigits)) return false;
+        console.log(i, deConvDigits[i], from, i in convDigits, convDigits[deConvDigits[i]] == i);
+        if (((deConvDigits[i] >= from) || !convDigits.includes(i)) && (i != '.')) return false;
     }
     return true;
 }
