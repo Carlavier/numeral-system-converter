@@ -40,6 +40,17 @@ function convCheck(input, from) {
     return true;
 }
 
+function convCheckWTH(str, signed) {
+    if (signed == '-') {
+        console.log(signed);
+        if (!str.length) return true;
+        let ok = true;
+        for(const i of str) if (i != '0') ok = false;
+        return ok;
+    }
+    return true;
+}
+
 function convTo10(str, from) {
     if (from == 10) return Number(str);
     let [int, fl] = str.split('.');
@@ -80,7 +91,8 @@ function conv(num, to) {
     return 'Result: ' + res;
 }
 
-function convHandle(str, from, to) {
+function convHandle(str, signed, from, to) {
+    if (convCheckWTH(str, signed)) return 'Errorrrrrr: WTH have you done!!! :('
     if (!str.length) return 'Error: You did it well :)';
     if (!convCheck(str, from)) return 'Error: Number digit(s) unexpected';
     return conv(convTo10(str, from), to);
@@ -96,14 +108,20 @@ modal.addEventListener('click', (event) => {
 })
 
 button.addEventListener('click', function() {
-    const input = inputStr.value;
+    let input = inputStr.value, signed = '';
+
+    if (input[0] == '-') {
+        signed = '-';
+        input = input.substring(1,input.length);
+    }
+
     const from = froms.findIndex((from) => {
         if (from.checked) return true;
     }); 
     const to = tos.findIndex((to) => {
         if (to.checked) return true;
     }); 
-    const res = convHandle(input, convSystem[from], convSystem[to]);
+    const res = convHandle(input, signed, convSystem[from], convSystem[to]);
     
     output.textContent = res;
     modal.setAttribute('style', 'display: flex;');
