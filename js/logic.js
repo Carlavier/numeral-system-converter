@@ -48,7 +48,7 @@ function convCheckWTH(str, signed) {
         for(const i of str) if (i != '0') ok = false;
         return ok;
     }
-    return true;
+    return false;
 }
 
 function convTo10(str, from) {
