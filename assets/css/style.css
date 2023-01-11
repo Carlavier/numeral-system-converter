@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.input-str,
+.button {
+    text-align: center;
+}
+
+.input-str {
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+.button {
+    width: 110px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 25px;
+    line-height: 1.6;
+    padding: 0;
+    background-color: red;
+    color: white;
+    background-color: black;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #555;
+}
+
+#modal {
+    position: absolute;
+    font-size: 25px;
+    background-color: rgba(.7, .7, .7, .3);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    display: none;
+}
+
+.message {
+    padding: 30px;
+    margin: -4px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.esc {
+    position: relative;
+    padding: 4px;
+    margin-top: -6px;
+    border-radius: 2px;
+    right: 0;
+    background-color: black;
+    color: white;
+}
+
+.esc:hover {
+    background-color: #555;
+    cursor: pointer;
+}

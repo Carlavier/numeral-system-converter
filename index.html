@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numeral system converter</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="main">
+        <div class="input-str">
+            <input type="text" name="input-string" placeholder="Don't fill me pls!">
+        </div>
+
+        <div class="options">
+            <div class="from">
+                <div class="from__module">
+                    <input type="radio" class="from" name="from" id="from__binary">
+                    <label for="from__binary">binary</label>
+                </div>
+                <div class="from__module">
+                    <input type="radio" class="from" name="from" id="from__octal">
+                    <label for="from__octal">octal</label>
+                </div>
+                <div class="from__module">
+                    <input type="radio" class="from" name="from" id="from__decimal" checked>
+                    <label for="from__decimal">decimal</label>
+                </div>
+                <div class="from__module">
+                    <input type="radio" class="from" name="from" id="from__hexadecimal">
+                    <label for="from__hexadecimal">hexadecimal</label>
+                </div>
+            </div>
+
+            <div class="arrow">to</div>
+    
+            <div class="to">
+                <div class="to__module">
+                    <input type="radio" class="to" name="to" id="to__binary" checked>
+                    <label for="to__binary">binary</label>
+                </div>
+                <div class="to__module">
+                    <input type="radio" class="to" name="to" id="to__octal">
+                    <label for="to__octal">octal</label>
+                </div>
+                <div class="to__module">
+                    <input type="radio" class="to" name="to" id="to__decimal">
+                    <label for="to__decimal">decimal</label>
+                </div>
+                <div class="to__module">
+                    <input type="radio" class="to" name="to" id="to__hexadecimal">
+                    <label for="to__hexadecimal">hexadecimal</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">Convert!</div>
+    </div>
+
+    <div id="modal">
+        <div class="message">
+            123
+        </div>
+        <div class="esc">
+            x
+        </div>
+    </div>
+
+    <script src="./js/logic.js"></script>
+</body>
+</html>
