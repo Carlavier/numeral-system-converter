@@ -34,7 +34,7 @@ function convCheck(input, from) {
     // console.log(from);
     for (const i of input) {
         // console.log(i, deConvDigits[i]);
-        if (deConvDigits[i] > from) return false;
+        if ((deConvDigits[i] > from) || !(i in convDigits)) return false;
     }
     return true;
 }
