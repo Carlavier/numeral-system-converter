@@ -121,6 +121,7 @@ button.addEventListener('click', function() {
     const to = tos.findIndex((to) => {
         if (to.checked) return true;
     }); 
+    
     const res = convHandle(input, signed, convSystem[from], convSystem[to]);
     
     output.textContent = res;
