@@ -1,2 +1,2 @@
 # numeral-system-converter
- Convert number from popular systems to another
+ Convert a number from popular systems to another

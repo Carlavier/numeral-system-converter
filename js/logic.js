@@ -6,6 +6,7 @@ const froms = Array.from(main.querySelectorAll('input.from'));
 const tos = Array.from(main.querySelectorAll('input.to'));
 
 const modal = document.querySelector('#modal');
+
 const output = modal.querySelector('.message');
 const escButton = modal.querySelector('.esc');
 
@@ -121,7 +122,7 @@ button.addEventListener('click', function() {
     const to = tos.findIndex((to) => {
         if (to.checked) return true;
     }); 
-    
+
     const res = convHandle(input, signed, convSystem[from], convSystem[to]);
     
     output.textContent = res;
